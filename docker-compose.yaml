@@ -1,0 +1,27 @@
+version: '3'
+services:
+  dependencies:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: base
+  todo-service:
+    build:
+      context: ./todo_service
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - dependencies
+  url-shortener:
+    build:
+      context: ./url-shortener
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - dependencies
