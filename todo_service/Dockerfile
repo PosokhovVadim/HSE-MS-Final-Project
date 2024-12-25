@@ -5,4 +5,4 @@ ENV CONFIG_PATH todo_service/config/config.yaml
 
 #ENV SQLITE_DATABASE=sqlite:////isat/data/data.db
 
-CMD ["poetry", "run", "scraper"]
+CMD ["poetry", "run", "todo_service"]
