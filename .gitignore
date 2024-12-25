@@ -1,6 +1,5 @@
 __pycache__
 *.lock
-*.toml
 *.env
 .ruff_cache
 data
