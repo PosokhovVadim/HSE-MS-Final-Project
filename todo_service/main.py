@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI, HTTPException
 from pkg.config.config import Config
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel
 from typing import List, Optional
 from todo_service.context import ctx
 from fastapi.middleware.cors import CORSMiddleware
