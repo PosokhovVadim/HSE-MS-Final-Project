@@ -12,7 +12,9 @@ services:
     ports:
       - "8080:8080"
     volumes:
+      - ./data/tasks:/data/tasks
       - ./logs:/app/logs
+      - ./db/tasks_init.sql:/docker-entrypoint-initdb.d/init.sql
     depends_on:
       - dependencies
   url-shortener:
