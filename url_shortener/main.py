@@ -25,8 +25,11 @@ app.add_middleware(
 )
 
 @app.post("/shorten", response_model=dict)
-async def shorten(url: str):
+async def shorten(body: dict):
     try:
+        url = body.get("url")
+        if not url:
+            return JSONResponse(content=jsonable_encoder({"message": "url is required"}), status_code=400)
         short_id = hashlib.md5(url.encode()).hexdigest()[:8]
         ctx.Storage.save(ShortURL(original_url=url, short_id=short_id))
         return {"short_url": short_id}
