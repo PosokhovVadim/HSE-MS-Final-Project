@@ -21,10 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+
 
 def main():
-    log.info(f"Config: {cfg.host}:{cfg.port}")
+    log.info(f"Service: {cfg.service_name} is starting at {cfg.host}:{cfg.port}")
     uvicorn.run("todo_service.main:app", host=cfg.host, port=cfg.port, reload=True)
