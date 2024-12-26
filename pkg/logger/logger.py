@@ -5,7 +5,7 @@ import os
 class Logger:
     def __init__(self, file_name=None):
         self.logger = logging.getLogger(file_name)
-        self.logger.setLevel(logging.INFO)
+        self.logger.setLevel(logging.DEBUG)
 
         if not os.path.exists("logs"):
             os.makedirs("logs")

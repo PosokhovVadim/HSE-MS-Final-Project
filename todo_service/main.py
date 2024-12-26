@@ -1,9 +1,9 @@
 import os
 from fastapi import FastAPI
-from pkg.Config.config import Config
+from pkg.config.config import Config
 from fastapi.middleware.cors import CORSMiddleware
 import logging
-# from todo_service.context import ctx
+from todo_service.context import ctx
 import uvicorn
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder

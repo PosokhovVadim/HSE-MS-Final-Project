@@ -11,8 +11,8 @@ class Config:
 
     def readConfig(self, config_path, log: logging.Logger):
         try:
+            log.info(f"Reading config file successfully {config_path}")
             with open(config_path, "r") as config_file:
-                log.info("Reading config file successfully")
                 return yaml.safe_load(config_file)
         except IOError:
             log.error("Config file not found")
