@@ -8,7 +8,7 @@ services:
   todo-service:
     build:
       context: ./todo_service
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     volumes:
@@ -17,7 +17,7 @@ services:
       - dependencies
   url-shortener:
     build:
-      context: ./url-shortener
+      context: ./url_shortener
       dockerfile: Dockerfile
     ports:
       - "8081:8080"
