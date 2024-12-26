@@ -7,7 +7,6 @@ class Storage:
         self.engine = create_engine(db_path)
         self.Session = sessionmaker(bind=self.engine)
         self.session = self.Session()
-        # self.Base.metadata.create_all(self.engine) need it?
 
     def save(self, url: ShortURL):
         self.session.add(url)
